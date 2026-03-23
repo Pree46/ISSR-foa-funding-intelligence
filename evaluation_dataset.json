@@ -1,0 +1,68 @@
+[
+  {
+    "foa_id": "NSF-24-520",
+    "title": "NSF 24-520: Long-Term Ecological Research (LTER)",
+    "description": "To address ecological questions that cannot be resolved with short-term observations or experiments, NSF established the Long-Term Ecological Research Program (LTER) in 1980. Research at LTER sites emphasizes the study of ecological phenomena over long periods of time. The program supports research on ecosystem processes, climate change impacts, biodiversity, and sustainability. Sites are chosen to represent major ecosystem types.",
+    "gold_tags": {
+      "research_domains": ["environment", "data_science"],
+      "methods": ["experimental", "computational"],
+      "populations": ["general_public"],
+      "sponsor_themes": ["basic_research", "infrastructure"]
+    }
+  },
+  {
+    "foa_id": "NSF-24-525",
+    "title": "NSF 24-525: Computer and Network Systems Research",
+    "description": "This solicitation invites proposals for research on computer systems, networking, cybersecurity, and privacy. Topics include machine learning applications, algorithmic innovations, network protocols, security vulnerabilities, and data protection mechanisms. The program supports both fundamental discoveries and applied research with real-world impact on technology development.",
+    "gold_tags": {
+      "research_domains": ["machine_learning", "cybersecurity", "data_science"],
+      "methods": ["computational", "experimental"],
+      "populations": ["underserved"],
+      "sponsor_themes": ["basic_research", "innovation"]
+    }
+  },
+  {
+    "foa_id": "NSF-24-530",
+    "title": "NSF 24-530: Education and Workforce Development in STEM",
+    "description": "Supporting education research, curriculum development, and professional training programs to broaden participation in STEM fields. Focus areas include K-12 education improvements, undergraduate degree programs, graduate training, and workforce development initiatives. Special emphasis on reaching underrepresented and underserved populations including minorities, women, and rural communities.",
+    "gold_tags": {
+      "research_domains": ["education"],
+      "methods": ["survey_qualitative", "mixed_methods"],
+      "populations": ["youth", "underserved"],
+      "sponsor_themes": ["workforce_development", "innovation"]
+    }
+  },
+  {
+    "foa_id": "NIH-R01-2024",
+    "title": "NIH R01 Grant: Biomedical Research and Development",
+    "description": "The NIH Research Project Grant (R01) supports discrete, specified, circumscribed research projects in all areas of health-related research. This includes clinical investigations, biomedical research, health services research, and behavioral studies. Projects may focus on disease mechanisms, treatment development, prevention strategies, or health disparities. Eligible institutions include universities, medical schools, and research centers.",
+    "gold_tags": {
+      "research_domains": ["public_health", "machine_learning"],
+      "methods": ["experimental", "computational"],
+      "populations": ["general_public", "underserved"],
+      "sponsor_themes": ["applied_research", "basic_research"]
+    }
+  },
+  {
+    "foa_id": "NIH-R21-2024",
+    "title": "NIH R21 Grant: Exploratory Research in Public Health",
+    "description": "The Exploratory/Developmental Research Grant (R21) supports innovative, high-risk biomedical and behavioral research projects that are exploratory and novel. Unlike traditional R01 grants, R21 grants allow for higher-risk, hypothesis-generating research on emerging health problems. Eligible researchers include faculty at universities and medical schools conducting health-related research.",
+    "gold_tags": {
+      "research_domains": ["public_health", "social_science"],
+      "methods": ["experimental", "survey_qualitative"],
+      "populations": ["general_public"],
+      "sponsor_themes": ["basic_research", "innovation"]
+    }
+  },
+  {
+    "foa_id": "NSF-24-535",
+    "title": "NSF 24-535: Social, Behavioral, and Economic Sciences",
+    "description": "Research program supporting investigations in psychology, sociology, economics, political science, anthropology, and related social sciences. Areas of focus include human behavior, social systems, economic decision-making, and community dynamics. Special interest in research with applications to equity, inclusion, and diversity in communities. Proposals may integrate behavioral and computational approaches.",
+    "gold_tags": {
+      "research_domains": ["social_science"],
+      "methods": ["survey_qualitative", "computational"],
+      "populations": ["underserved", "general_public"],
+      "sponsor_themes": ["basic_research", "applied_research"]
+    }
+  }
+]
