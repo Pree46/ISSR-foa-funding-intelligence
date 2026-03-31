@@ -3,9 +3,11 @@ NIH Project Reporting System (RePORTER) API integration
 Fetches funded research projects, converts to FOA-like format
 """
 import requests
-import json
-from datetime import datetime
 from typing import Dict, Optional
+
+from foa_pipeline.utils.logger import get_logger
+
+log = get_logger(__name__)
 
 
 def fetch_nih_project(project_id: str) -> Dict:
@@ -18,7 +20,7 @@ def fetch_nih_project(project_id: str) -> Dict:
     Returns:
         Normalized FOA-like record
     """
-    print(f"[NIH] Fetching project: {project_id}")
+    log.info("Fetching NIH project: %s", project_id)
     
     # NIH RePORTER API endpoint (no auth required for public data)
     api_url = "https://api.federalreporter.nih.gov/v2/projects/search"
@@ -46,7 +48,7 @@ def fetch_nih_project(project_id: str) -> Dict:
         return _normalize_nih_project(project, project_id)
         
     except requests.exceptions.RequestException as e:
-        print(f"[NIH ERROR] Failed to fetch project: {e}")
+        log.error("Failed to fetch NIH project: %s", e)
         raise
 
 
@@ -61,7 +63,7 @@ def fetch_nih_by_keyword(keyword: str, limit: int = 1) -> Dict:
     Returns:
         First matching project as FOA-like record
     """
-    print(f"[NIH] Searching for keyword: {keyword}")
+    log.info("Searching NIH for keyword: %s", keyword)
     
     api_url = "https://api.federalreporter.nih.gov/v2/projects/search"
     
@@ -89,7 +91,7 @@ def fetch_nih_by_keyword(keyword: str, limit: int = 1) -> Dict:
         return _normalize_nih_project(project, None)
         
     except requests.exceptions.RequestException as e:
-        print(f"[NIH ERROR] Search failed: {e}")
+        log.error("NIH Search failed: %s", e)
         raise
 
 
@@ -109,7 +111,6 @@ def _normalize_nih_project(project: Dict, project_id: Optional[str] = None) -> D
     end_date = project.get("projectEndDate")
     
     # Award info
-    fy = project.get("fiscalYear")
     award_amount = project.get("totalCost")
     
     return {
@@ -124,35 +125,3 @@ def _normalize_nih_project(project: Dict, project_id: Optional[str] = None) -> D
         "source_url": f"https://reporter.nih.gov/project-details/{project_number}",
         "source": "NIH",
     }
-
-
-def search_nih_funding_opportunities(topic: str) -> str:
-    """
-    Helper to search NIH funding opportunities (Open Funding Notices).
-    Note: This is informational - NIH uses a different structure than traditional FOAs.
-    
-    Args:
-        topic: Search topic (e.g., "machine learning", "clinical trials")
-        
-    Returns:
-        Formatted string with opportunity info
-    """
-    print(f"[NIH] Searching funding notices for: {topic}")
-    
-    try:
-        # NIH Funding Opportunities search
-        url = "https://grants.nih.gov/grants/guide/search-results.htm"
-        params = {
-            "key": topic,
-            "s1": "PA",  # Program Announcements
-            "s2": "RFP",  # Requests for Applications
-        }
-        
-        resp = requests.get(url, params=params, timeout=10)
-        resp.raise_for_status()
-        
-        # This would need HTML parsing; for now, return search URL
-        return f"Search NIH opportunities at: {url}?key={topic}"
-        
-    except Exception as e:
-        return f"Could not search NIH opportunities: {e}"

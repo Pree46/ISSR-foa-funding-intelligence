@@ -64,5 +64,71 @@
       "populations": ["underserved", "general_public"],
       "sponsor_themes": ["basic_research", "applied_research"]
     }
+  },
+  {
+    "foa_id": "NSF-24-540",
+    "title": "NSF 24-540: Engineering Research and Graduate Education",
+    "description": "Supports engineering research across multiple disciplines: mechanical systems, civil infrastructure, electrical systems, chemical engineering, and materials. Programs emphasize innovation in manufacturing, robotics, autonomous systems, and sustainable engineering solutions. Welcomes interdisciplinary proposals combining engineering with computer science, environmental science, or biomedical applications. Strong emphasis on workforce development through graduate research assistantships.",
+    "gold_tags": {
+      "research_domains": ["engineering", "machine_learning"],
+      "methods": ["experimental", "computational"],
+      "populations": ["youth"],
+      "sponsor_themes": ["innovation", "workforce_development"]
+    }
+  },
+  {
+    "foa_id": "NIH-CA-2024",
+    "title": "NIH NCI Cancer Biology and Prevention Research",
+    "description": "The National Cancer Institute supports cancer research including prevention, detection, treatment, and survivorship studies. Research areas encompass molecular mechanisms of cancer, drug development, immunotherapy, precision medicine approaches, and health disparities in cancer care. Emphasis on translating basic discoveries into clinical applications and reducing cancer burden in underserved populations.",
+    "gold_tags": {
+      "research_domains": ["public_health", "machine_learning"],
+      "methods": ["experimental", "computational"],
+      "populations": ["elderly", "underserved"],
+      "sponsor_themes": ["applied_research", "basic_research"]
+    }
+  },
+  {
+    "foa_id": "NSF-24-545",
+    "title": "NSF 24-545: Materials Research and Discovery",
+    "description": "Solicitation for research on design, synthesis, characterization, and processing of novel materials. Covers metals, polymers, ceramics, composites, biomaterials, and quantum materials. Applications include energy storage, sustainable manufacturing, biocompatible devices, and nanotechnology. Encourages computational modeling, machine learning for materials discovery, and high-throughput experimental methods.",
+    "gold_tags": {
+      "research_domains": ["engineering", "data_science"],
+      "methods": ["experimental", "computational"],
+      "populations": ["general_public"],
+      "sponsor_themes": ["innovation", "basic_research"]
+    }
+  },
+  {
+    "foa_id": "NIH-SBIR-2024",
+    "title": "NIH SBIR Phase II: Small Business Research and Development",
+    "description": "Small Business Innovation Research (SBIR) program for small businesses to conduct high-risk, high-reward research in biomedical sciences and health technologies. Phase II supports commercialization-ready projects demonstrating feasibility from Phase I. Topics include medical devices, diagnostics, therapeutic approaches, and digital health solutions addressing unmet clinical needs.",
+    "gold_tags": {
+      "research_domains": ["public_health", "engineering"],
+      "methods": ["experimental"],
+      "populations": ["general_public"],
+      "sponsor_themes": ["innovation", "applied_research"]
+    }
+  },
+  {
+    "foa_id": "NSF-24-550",
+    "title": "NSF 24-550: Robotics and Autonomous Systems",
+    "description": "Research on robotic systems, autonomous vehicles, human-robot interaction, and intelligent automation. Applications span manufacturing, healthcare delivery in remote areas, disaster response, and accessibility for elderly and disabled populations. Emphasis on machine learning for perception and control, collaborative robotics, and socially responsible AI design.",
+    "gold_tags": {
+      "research_domains": ["machine_learning", "engineering"],
+      "methods": ["computational", "experimental"],
+      "populations": ["elderly", "underserved"],
+      "sponsor_themes": ["innovation", "basic_research"]
+    }
+  },
+  {
+    "foa_id": "NIH-NIEHS-2024",
+    "title": "NIH NIEHS Environmental Health and Toxicology Research",
+    "description": "National Institute of Environmental Health Sciences supports research on environmental exposures, occupational health, sustainable chemicals, and environmental justice. Application domains include air quality, water contamination, radiation exposure, and chemical health hazards. Special focus on vulnerable populations experiencing disproportionate environmental burden and climate-related health risks.",
+    "gold_tags": {
+      "research_domains": ["public_health", "environment"],
+      "methods": ["experimental", "survey_qualitative"],
+      "populations": ["underserved", "general_public"],
+      "sponsor_themes": ["applied_research", "basic_research"]
+    }
   }
 ]

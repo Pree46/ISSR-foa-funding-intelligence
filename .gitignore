@@ -47,7 +47,7 @@ htmlcov/
 
 # Output directories
 out/
-eval_results.json
+eval_results*.json
 sample_output.json
 sample_output.csv
 
@@ -58,3 +58,5 @@ Thumbs.db
 # Misc
 *.log
 .cache/
+
+eval_results*.json

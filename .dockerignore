@@ -1,0 +1,12 @@
+.git
+.gitignore
+__pycache__/
+*.pyc
+venv/
+.venv/
+env/
+out/
+eval_results*.json
+evaluation_dataset.json
+README.md
+TESTING_REPORT.md

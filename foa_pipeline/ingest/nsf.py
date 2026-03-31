@@ -193,6 +193,10 @@ def fetch_nsf(url: str) -> dict:
 
     Works with both legacy (www.nsf.gov) and redesigned (new.nsf.gov) pages.
     """
+    if not url.startswith("http"):
+        url = f"https://www.nsf.gov/cgi-bin/getpub?{url}"
+        log.info("Converted solicitation number to URL.")
+        
     log.info("Scraping NSF page: %s", url)
     resp = fetch(url)
     soup = BeautifulSoup(resp.text, "html.parser")
