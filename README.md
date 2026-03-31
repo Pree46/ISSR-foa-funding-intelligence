@@ -103,26 +103,22 @@ Thresholds and weights configurable in [tagger_hybrid.py](tagger_hybrid.py#L40).
 
 ## Project Structure
 
-```
+```text
 FOA Funding Intelligence/
-├── main.py               # CLI entry point (93 lines)
-├── ingest.py             # FOA fetching logic for NSF/Grants.gov/NIH (213 lines)
-├── pipeline.py           # Ingestion & evaluation orchestration (64 lines)
-├── export.py             # JSON/CSV export (29 lines)
-├── tagger_hybrid.py      # Hybrid semantic tagging with embeddings (229 lines)
-├── ingest_nih.py         # NIH Federal Reporter API (158 lines)
-├── evaluator.py          # Evaluation framework (187 lines)
-├── evaluation_dataset.json   # 12 hand-labeled FOAs
+├── main.py                   # Main CLI entry point
+├── foa_pipeline/             # Core application package
+│   ├── ingest/               # Modules for parsing NSF, Grants.gov, NIH
+│   ├── tagging/              # Hybrid semantic tagging and ontology
+│   ├── pipeline.py           # Orchestration logic
+│   ├── evaluator.py          # Testing module (Precision/Recall/F1)
+│   └── export.py             # JSON/CSV exporters
+├── Dockerfile                # Configures the application and machine learning cache
+├── evaluation_dataset.json   # 12 hand-labeled FOAs for baseline testing
 ├── requirements.txt
 └── README.md
 ```
 
-**Design**: Each module has a single responsibility:
-- `main.py` — CLI routing only
-- `ingest.py` — Data fetching (NSF, Grants.gov, NIH)
-- `pipeline.py` — Workflow orchestration
-- `export.py` — Output formatting
-- `tagger_hybrid.py`, `ingest_nih.py`, `evaluator.py` — Domain logic
+**Design**: The architecture uses a clean package structure under `foa_pipeline/`, guaranteeing separated concerns between fetching, parsing, tagging, and evaluation.
 
 ---
 
@@ -146,12 +142,22 @@ See [eval_results_expanded.json](eval_results_expanded.json) for detailed per-la
 
 ### Prerequisites
 - Python 3.8+
+- Docker (optional, but recommended)
 
 ### Setup
 ```bash
 git clone https://github.com/Pree46/foa-funding-intelligence.git
 cd foa-funding-intelligence
+```
+
+#### Option A: Local Python
+```bash
 pip install -r requirements.txt
+```
+
+#### Option B: Docker
+```bash
+docker build -t foa-intelligence .
 ```
 
 ### Commands
@@ -159,6 +165,7 @@ pip install -r requirements.txt
 | Command | Purpose |
 |---------|---------|
 | `python main.py --url "nsf24520" --out_dir ./out` | Ingest NSF FOA |
+| `docker run --rm foa-intelligence --url "nsf24520"` | Ingest via Docker container |
 | `python main.py --url "nsf24520" --out_dir ./out --legacy` | Use rule-based tagging only |
 | `python main.py --eval evaluation_dataset.json --eval_out results.json` | Run evaluation |
 
@@ -208,5 +215,5 @@ Outputs: `foa.json`, `foa.csv`
 - Dr. Xinyue Ye (University of Alabama)  
 - Dr. Andrea Underhill (University of Alabama)
 
-**Last Updated:** March 23, 2026  
+**Last Updated:** March 31, 2026  
 
